@@ -1,0 +1,245 @@
+body { 
+  font-family: Arial, sans-serif; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding: 20px; 
+  line-height: 1.4;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+#quiz-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.question { 
+  margin-bottom: 20px; 
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.question p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.option { 
+  display: block; 
+  margin: 5px 0; 
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  transform-origin: center;
+}
+
+.option:not(.correct):not(.incorrect):hover {
+  background-color: #e8e8e8;
+}
+
+.option input {
+  margin-right: 10px;
+}
+
+@keyframes incorrectShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+@keyframes correctPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.option.incorrect {
+  background-color: #F44336;
+  color: white;
+  box-shadow: 0 0 15px rgba(244, 67, 54, 0.7);
+  animation: incorrectShake 0.4s ease-in-out;
+  border-color: #d32f2f;
+}
+
+.option.correct {
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+  animation: correctPulse 0.4s ease-in-out;
+  border-color: #388E3C;
+}
+
+.option.correct.selected {
+  background-color: #2E7D32;
+  color: white;
+  box-shadow: 0 0 20px rgba(46, 125, 50, 0.8);
+  animation: correctPulse 0.4s ease-in-out;
+  border-color: #1B5E20;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1976D2;
+}
+
+#restart {
+  background-color: #FF9800;
+}
+
+#restart:hover {
+  background-color: #F57C00;
+}
+
+#results {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+  }
+  #quiz-container {
+      background-color: #2d2d2d;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+  .question {
+      background-color: #383838;
+  }
+  .question p {
+      color: #e0e0e0;
+  }
+  .option:not(.correct):not(.incorrect):hover {
+      background-color: #444444;
+  }
+  .option.correct {
+      background-color: #2E7D32;
+      border-color: #4CAF50;
+  }
+  .option.correct.selected {
+      background-color: #1B5E20;
+      border-color: #388E3C;
+  }
+  .option.incorrect {
+      background-color: #c62828;
+      border-color: #d32f2f;
+  }
+  button {
+      background-color: #1976D2;
+  }
+  button:hover {
+      background-color: #1565C0;
+  }
+  #restart {
+      background-color: #EF6C00;
+  }
+  #restart:hover {
+      background-color: #E65100;
+  }
+}
+
+#timer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #333;
+  background: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  #timer {
+      color: #fff;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.card p {
+  margin: 0;
+  color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+      background-color: #2d2d2d;
+  }
+  
+  .card h2 {
+      color: #e0e0e0;
+  }
+  
+  .card p {
+      color: #999;
+  }
+}
+
+#back {
+  background-color: #607D8B;
+}
+
+#back:hover {
+  background-color: #455A64;
+}

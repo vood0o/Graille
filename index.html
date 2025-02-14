@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Grile FMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="timer">00:00</div>
+    <div id="card-container" class="cards">
+        <div class="card" data-quiz="eabd">
+            <h2>Grile Elemente avansate de baze de date</h2>
+            <p>Click pentru a începe testul</p>
+        </div>
+        <div class="card" data-quiz="medii">
+            <h2>Medii de programare și dezvoltare</h2>
+            <p>Click pentru a începe testul</p>
+        </div>
+    </div>
+    <div id="quiz-container" style="display: none;">
+        <div id="quiz"></div>
+        <div id="controls">
+            <button id="submit">Verifică Răspunsuri</button>
+            <button id="restart" style="display:none;">Restart Test</button>
+            <button id="back" style="display:none;">Înapoi la Meniu</button>
+        </div>
+        <div id="results"></div>
+    </div>
+    <footer>proiect rapid făcut de Voicu</footer>
+    <script src="questions-eabd.js"></script>
+    <script src="questions-medii.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
