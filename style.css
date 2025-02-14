@@ -33,11 +33,10 @@ body {
   margin: 5px 0; 
   padding: 8px;
   border-radius: 4px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
   position: relative;
   border: 2px solid transparent;
-  transform-origin: center;
 }
 
 .option:not(.correct):not(.incorrect):hover {
@@ -48,39 +47,23 @@ body {
   margin-right: 10px;
 }
 
-@keyframes incorrectShake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-8px); }
-  75% { transform: translateX(8px); }
-}
-
-@keyframes correctPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
-
 .option.incorrect {
   background-color: #F44336;
   color: white;
-  box-shadow: 0 0 15px rgba(244, 67, 54, 0.7);
-  animation: incorrectShake 0.4s ease-in-out;
   border-color: #d32f2f;
+  transition: background-color 0.3s ease;
 }
 
 .option.correct {
   background-color: #4CAF50;
   color: white;
-  box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
-  animation: correctPulse 0.4s ease-in-out;
   border-color: #388E3C;
+  transition: background-color 0.3s ease;
 }
 
 .option.correct.selected {
   background-color: #2E7D32;
   color: white;
-  box-shadow: 0 0 20px rgba(46, 125, 50, 0.8);
-  animation: correctPulse 0.4s ease-in-out;
   border-color: #1B5E20;
 }
 
