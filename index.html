@@ -10,11 +10,21 @@
     <div id="card-container" class="cards">
         <div class="card" data-quiz="eabd">
             <h2>Grile Elemente avansate de baze de date</h2>
-            <p>Click pentru a începe testul</p>
+            <p>Alege numărul de întrebări:</p>
+            <div class="button-group">
+                <button onclick="showQuiz('eabd', 15)">15 întrebări</button>
+                <button onclick="showQuiz('eabd', 30)">30 întrebări</button>
+                <button onclick="showQuiz('eabd', -1)">Toate întrebările</button>
+            </div>
         </div>
         <div class="card" data-quiz="medii">
             <h2>Medii de programare și dezvoltare</h2>
-            <p>Click pentru a începe testul</p>
+            <p>Alege numărul de întrebări:</p>
+            <div class="button-group">
+                <button onclick="showQuiz('medii', 15)">15 întrebări</button>
+                <button onclick="showQuiz('medii', 30)">30 întrebări</button>
+                <button onclick="showQuiz('medii', -1)">Toate întrebările</button>
+            </div>
         </div>
     </div>
     <div id="quiz-container" style="display: none;">
